@@ -1,7 +1,7 @@
-import 'package:advmobprog_midterms_tp03_molina/pages/user_details_screen.dart';
-import 'package:advmobprog_midterms_tp03_molina/theme/theme.dart';
+import 'package:advmobprog_midterms_tp03_molina/views/user_details_screen.dart';
+import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:advmobprog_midterms_tp03_molina/theme/theme_ext.dart';
+import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});

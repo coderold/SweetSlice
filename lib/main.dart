@@ -1,5 +1,5 @@
-import 'package:advmobprog_midterms_tp03_molina/pages/start_screen.dart';
-import 'package:advmobprog_midterms_tp03_molina/theme/theme.dart';
+import 'package:advmobprog_midterms_tp03_molina/views/start_screen.dart';
+import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:flutter/material.dart';
 
 void main(){

@@ -1,6 +1,6 @@
-import 'package:advmobprog_midterms_tp03_molina/theme/theme.dart';
+import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:advmobprog_midterms_tp03_molina/theme/theme_ext.dart';
+import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
 
 class UserDetailsScreen extends StatelessWidget {
   const UserDetailsScreen({super.key});
