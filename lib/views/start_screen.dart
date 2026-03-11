@@ -40,23 +40,27 @@ class StartScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         FractionallySizedBox(
-                          alignment: Alignment.topCenter,
+                          alignment: Alignment.center,
                           widthFactor: Screensize.isWeb(context)? 0.5: 0.7,
                           child: Container(
-                            padding: EdgeInsets.only(bottom: 30, top: 30),
+                            padding: EdgeInsets.only(bottom: 20, top: 30),
                             child: Image.asset('assets/sweetslicelogo.png'),
                           )
                         ),
                         Text(
                           "Baked fresh daily and delivered to your doorstep.",
+                          textAlign: TextAlign.center,
                           style: context.textTheme.bodyLarge!.copyWith(
                             color: AppTheme.primary,
                             fontSize: Screensize.isWeb(context)? 24 : 18
                           ),
-                          ),
+                        ),
                       ],
                     ),
                   ),
+
+                  if(Screensize.isMobile(context)) Spacer(),
+                  
                   FractionallySizedBox(
                     widthFactor: 0.7,
                     child: Container(
