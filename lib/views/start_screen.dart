@@ -1,7 +1,8 @@
-import 'package:advmobprog_midterms_tp03_molina/views/user_details_screen.dart';
+import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
-import 'package:flutter/material.dart';
+import 'package:advmobprog_midterms_tp03_molina/views/user_details_screen.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
+import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -9,33 +10,89 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppTheme.primary,
-        title: Text(
-          "Start Screen",
-          style: context.textTheme.headlineMedium,
-        ),
-        centerTitle: true,
-      ),
-
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
-          
-          Center(
-            child: ElevatedButton(
-              onPressed: (){
-                Navigator.push(
-                  context, 
-                  MaterialPageRoute(builder: (context) => UserDetailsScreen())
-                );
-              }, 
-              child: Text("Start")
+          Positioned.fill(
+            child: Container(
+              color: AppTheme.primary
             ),
           ),
 
-        ],
-      ),
+          Align(
+            alignment: Screensize.isWeb(context)? Alignment.centerRight : Alignment.bottomCenter,
+            child: Container(
+              width: Screensize.isWeb(context)? Screensize.width(context) * 0.8: double.infinity,
+              height: Screensize.isWeb(context)? double.infinity: Screensize.height(context) * 0.8,
+
+              decoration: BoxDecoration(
+                color: AppTheme.background,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(100),
+                  topRight: Screensize.isWeb(context)? Radius.zero : Radius.circular(100),
+                  bottomLeft: Screensize.isWeb(context)? Radius.circular(100) : Radius.zero
+                )
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: Alignment.center,
+                    child: Column(
+                      children: [
+                        FractionallySizedBox(
+                          alignment: Alignment.topCenter,
+                          widthFactor: Screensize.isWeb(context)? 0.5: 0.7,
+                          child: Container(
+                            padding: EdgeInsets.only(bottom: 30, top: 30),
+                            child: Image.asset('assets/sweetslicelogo.png'),
+                          )
+                        ),
+                        Text(
+                          "Baked fresh daily and delivered to your doorstep.",
+                          style: context.textTheme.bodyLarge!.copyWith(
+                            color: AppTheme.primary,
+                            fontSize: Screensize.isWeb(context)? 24 : 18
+                          ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  FractionallySizedBox(
+                    widthFactor: 0.7,
+                    child: Container(
+                      height: 100,
+                      padding: EdgeInsets.all(20),
+                      margin: EdgeInsets.only(top: 20, bottom: 20),
+                      child: ElevatedButton(
+                        style: ButtonStyle(
+                          backgroundColor: WidgetStatePropertyAll(AppTheme.primary)                  
+                        ),
+                        onPressed: (){
+                          Navigator.push(
+                            context, 
+                            MaterialPageRoute(builder: (context) => UserDetailsScreen()),
+                            //(route) => false
+                          );
+                        }, 
+                        child: Text(
+                          "Start Ordering",
+                          style: context.textTheme.headlineSmall!.copyWith(
+                            color: AppTheme.background
+                          ),
+                          )
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ),
+
+          
+          
+        ]
+      )
+      
     );
   }
 }
