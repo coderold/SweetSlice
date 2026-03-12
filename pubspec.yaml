@@ -62,6 +62,13 @@ flutter:
   assets:
     - assets/sweetslicelogo.png
     - assets/cakeswp.jpg
+    - assets/sizes.jpg
+    - assets/flavors/vanilla.jpg
+    - assets/flavors/forest.jpg
+    - assets/flavors/honey.jpg
+    - assets/flavors/lemon.jpg
+    - assets/flavors/choco.jpg
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images

@@ -1,6 +1,6 @@
 import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
-import 'package:advmobprog_midterms_tp03_molina/views/user_details_screen.dart';
+import 'package:advmobprog_midterms_tp03_molina/views/flavor_screen.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
 import 'package:flutter/material.dart';
 
@@ -36,9 +36,9 @@ class StartScreen extends StatelessWidget {
               decoration: BoxDecoration(
                 color: AppTheme.background,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(100),
-                  topRight: Screensize.isWeb(context)? Radius.zero : Radius.circular(100),
-                  bottomLeft: Screensize.isWeb(context)? Radius.circular(100) : Radius.zero
+                  topLeft: Radius.circular(40),
+                  topRight: Screensize.isWeb(context)? Radius.zero : Radius.circular(40),
+                  bottomLeft: Screensize.isWeb(context)? Radius.circular(40) : Radius.zero
                 )
               ),
               child: Column(
@@ -83,7 +83,7 @@ class StartScreen extends StatelessWidget {
                         onPressed: (){
                           Navigator.push(
                             context, 
-                            MaterialPageRoute(builder: (context) => UserDetailsScreen()),
+                            MaterialPageRoute(builder: (context) => FlavorScreen()),
                             //(route) => false
                           );
                         }, 
