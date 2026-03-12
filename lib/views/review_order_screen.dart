@@ -3,6 +3,7 @@ import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
 import 'package:advmobprog_midterms_tp03_molina/views/start_screen.dart';
+import 'package:advmobprog_midterms_tp03_molina/views/thank_you_screen.dart';
 import 'package:advmobprog_midterms_tp03_molina/widgets/next_button.dart';
 import 'package:flutter/material.dart';
 
@@ -102,7 +103,11 @@ class ReviewOrderScreen extends StatelessWidget {
                           backgroundColor: AppTheme.success,
                           padding: EdgeInsets.all(0),
                           onPressed: () {
-                            
+                            Navigator.pushAndRemoveUntil(
+                              context, 
+                              MaterialPageRoute(builder: (context) => ThankYouScreen()),
+                              (route) => false
+                            );
                           },
                         ),
                         NextButton(
@@ -138,7 +143,7 @@ class ReviewOrderScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(label, style: const TextStyle(color: AppTheme.textMuted)),
-          Text("₱${price.toStringAsFixed(2)}", style: const TextStyle(fontWeight: FontWeight.w500)),
+          Text("₱${price.toString()}", style: const TextStyle(fontWeight: FontWeight.w500)),
         ],
       ),
     );

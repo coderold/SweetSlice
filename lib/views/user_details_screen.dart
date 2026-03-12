@@ -14,7 +14,6 @@ class UserDetailsScreen extends StatefulWidget {
 }
 
 class _UserDetailsScreenState extends State<UserDetailsScreen> {
-  // 1. Define controllers for the text fields
   final TextEditingController _nameCtrl = TextEditingController();
   final TextEditingController _msgCtrl = TextEditingController();
   final TextEditingController _addrCtrl = TextEditingController();
@@ -28,7 +27,6 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
 
   @override
   void dispose() {
-    // Always dispose controllers to prevent memory leaks
     _nameCtrl.dispose();
     _msgCtrl.dispose();
     _addrCtrl.dispose();
@@ -108,7 +106,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                 NextButton(
                   label: "Next: Review Order",
                   onPressed: () {
-                    // 2. Save all local data to the Singleton Controller
+
                     final order = OrderController.instance;
                     order.recipientName = _nameCtrl.text;
                     order.dedication = _msgCtrl.text;
@@ -121,7 +119,7 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
                       context, 
                       MaterialPageRoute(builder: (context) => const ReviewOrderScreen())
                     );
-                    
+
                   },
                 ),
               ],
@@ -132,7 +130,6 @@ class _UserDetailsScreenState extends State<UserDetailsScreen> {
     );
   }
 
-  // Updated helper to accept the controller
   Widget _customTextField(String hint, TextEditingController controller, {int maxLines = 1}) {
     return TextField(
       controller: controller,
