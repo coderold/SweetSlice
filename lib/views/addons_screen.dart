@@ -1,3 +1,4 @@
+import 'package:advmobprog_midterms_tp03_molina/controllers/order_controller.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
@@ -87,6 +88,9 @@ class _AddonsScreenState extends State<AddonsScreen> {
                   NextButton(
                     label: "Next: Fill Up Details", 
                     onPressed: (){
+                      List<AddOn> selected = addons.where((item) => item.isSelected).toList();
+                      OrderController.instance.selectedAddons = selected;
+                      
                       Navigator.push(
                         context, 
                         MaterialPageRoute(builder: (context) => UserDetailsScreen()),

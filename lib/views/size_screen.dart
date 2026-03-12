@@ -1,3 +1,4 @@
+import 'package:advmobprog_midterms_tp03_molina/controllers/order_controller.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
@@ -98,6 +99,7 @@ class _SizeScreenState extends State<SizeScreen> {
                   NextButton(
                     label: "Next: Select Add Ons", 
                     onPressed: (){
+                      OrderController.instance.selectedSize = currentSize;
                       Navigator.push(
                         context, 
                         MaterialPageRoute(builder: (context) => AddonsScreen()),
