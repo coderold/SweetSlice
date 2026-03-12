@@ -1,3 +1,4 @@
+import 'package:advmobprog_midterms_tp03_molina/controllers/order_controller.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
@@ -68,7 +69,23 @@ class _FlavorScreenState extends State<FlavorScreen> {
                         final item = Cake.flavors[index];
                         return RadioListTile<CakeFlavor>(
                           title: Text(item.name, style: const TextStyle(fontWeight: FontWeight.bold)),
-                          subtitle: Text(item.description),
+                          subtitle: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "${item.description}\n",
+                                  style: context.textTheme.bodySmall,
+                                ),
+                                TextSpan(
+                                  text: "₱${item.basePrice.toStringAsFixed(2)}",
+                                  style: TextStyle(
+                                    color: AppTheme.primary,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ]
+                            )
+                          ),
                           value: item,
                           groupValue: currentCake,
                           activeColor: AppTheme.primary,
@@ -83,6 +100,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
                   NextButton(
                     label: "Next: Select Size", 
                     onPressed: (){
+                    OrderController.instance.selectedFlavor = currentCake;
                       Navigator.push(
                         context, 
                         MaterialPageRoute(builder: (context) => SizeScreen()),

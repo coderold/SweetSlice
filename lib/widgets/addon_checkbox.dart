@@ -23,11 +23,10 @@ class AddonCheckbox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: Screensize.height(context) * 0.2, 
       child: Row(
         children: [
-
           Checkbox(
             activeColor: AppTheme.primary, 
             value: isSelected,           
@@ -56,7 +55,7 @@ class AddonCheckbox extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  "P ${price.toStringAsFixed(2)}",
+                  "₱${price.toStringAsFixed(2)}",
                   style: TextStyle(
                     color: AppTheme.primary, 
                     fontWeight: FontWeight.bold,

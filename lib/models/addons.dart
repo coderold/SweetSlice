@@ -18,19 +18,19 @@ class AddOn {
           name: "Happy Birthday Topper",
           description: "Elegant gold acrylic lettering to make the occasion official.",
           imagePath: "assets/addons/topper.jpg",
-          price: 8.00,
+          price: 50.00,
         ),
         AddOn(
           name: "Blank Greeting Card",
           description: "A premium card for your personalized handwritten message.",
           imagePath: "assets/addons/card.jpg",
-          price: 4.50,
+          price: 25.00,
         ),
         AddOn(
           name: "Premium Candle Set",
-          description: "A set of 12 sleek, drip-less candles in a variety of colors.",
+          description: "A set of 24 sleek, drip-less candles in a variety of colors.",
           imagePath: "assets/addons/candle.jpg",
-          price: 5.00,
+          price: 100.00,
         ),
       ];
 }

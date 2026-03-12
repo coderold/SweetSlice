@@ -59,7 +59,6 @@ class _SizeScreenState extends State<SizeScreen> {
                     ),
                   ),
 
-                  // The Scrollable List
                   Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -68,7 +67,23 @@ class _SizeScreenState extends State<SizeScreen> {
                         final item = Cake.sizes[index];
                         return RadioListTile<CakeSize>(
                           title: Text(item.name, style: const TextStyle(fontWeight: FontWeight.bold)),
-                          subtitle: Text(item.description),
+                          subtitle: Text.rich(
+                            TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "${item.description}\n",
+                                  style: context.textTheme.bodySmall,
+                                ),
+                                TextSpan(
+                                  text: "+ ₱${item.addPrice.toStringAsFixed(2)}",
+                                  style: TextStyle(
+                                    color: AppTheme.primary,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ]
+                            )
+                          ),
                           value: item,
                           groupValue: currentSize,
                           activeColor: AppTheme.primary,

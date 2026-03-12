@@ -19,44 +19,83 @@ class _AddonsScreenState extends State<AddonsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool isWeb = Screensize.isWeb(context);
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Select Add Ons", style: context.textTheme.headlineMedium),
         centerTitle: true,
         backgroundColor: AppTheme.primary,
       ),
-      body: Column(
+      body: Flex(
+        direction: isWeb ? Axis.horizontal : Axis.vertical,
         children: [
-
           Expanded(
-            child: ListView.builder(
-              itemCount: addons.length,
-              itemBuilder: (context, index) {
-                 final addon = addons[index];
-                return AddonCheckbox(
-                  name: addon.name,
-                  description: addon.description,
-                  imagePath: addon.imagePath,
-                  price: addon.price,
-                  isSelected: addon.isSelected, 
-                  onChanged: (bool? value) {
-                    setState(() {
-                      addon.isSelected = value ?? false;
-                    });
-                  },
-                );
-              },
+            flex: isWeb ? 3 : 2,
+            child: Container(
+              width: double.infinity,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/addons/addon.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
 
-          NextButton(
-            label: "Next: Select Add Ons", 
-            onPressed: (){
-              Navigator.push(
-                context, 
-                MaterialPageRoute(builder: (context) => UserDetailsScreen()),
-              );
-            }
+          Expanded(
+            flex: isWeb ? 2 : 3, 
+            child: Container(
+              color: AppTheme.background,
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+                    child: Text(
+                      "Choose your Add Ons",
+                      style: context.textTheme.headlineSmall?.copyWith(
+                        color: AppTheme.primary,
+                      ),
+                    ),
+                  ),
+
+
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsetsGeometry.symmetric(horizontal: Screensize.isWeb(context)? 40 : 10),
+                      child: ListView.builder(
+                        itemCount: addons.length,
+                        itemBuilder: (context, index) {
+                          final addon = addons[index];
+                          return AddonCheckbox(
+                            name: addon.name,
+                            description: addon.description,
+                            imagePath: addon.imagePath,
+                            price: addon.price,
+                            isSelected: addon.isSelected, 
+                            onChanged: (bool? value) {
+                              setState(() {
+                                addon.isSelected = value ?? false;
+                              });
+                            },
+                          );
+                        },
+                      ),
+                    ),
+                  ),
+
+                  NextButton(
+                    label: "Next: Fill Up Details", 
+                    onPressed: (){
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => UserDetailsScreen()),
+                      );
+                    }
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),

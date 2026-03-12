@@ -7,31 +7,31 @@ class Cake {
       name: 'Brown Butter Vanilla',
       description: 'Elevated vanilla with nutty brown butter notes and a salted caramel drip.',
       imagePath: 'assets/flavors/vanilla.jpg',
-      basePrice: 25.00,
+      basePrice: 450.00,
     ),
     CakeFlavor(
       name: 'Black Forest 2.0',
       description: 'Dark chocolate layers with tart cherry compote and mascarpone cream.',
       imagePath: 'assets/flavors/forest.jpg',
-      basePrice: 30.00,
+      basePrice: 700.00,
     ),
     CakeFlavor(
       name: 'Lemon Raspberry Ricotta',
       description: 'Moist ricotta crumb with zesty lemon and fresh raspberry pops.',
       imagePath: 'assets/flavors/lemon.jpg',
-      basePrice: 28.00,
+      basePrice: 580.00,
     ),
     CakeFlavor(
       name: 'Spiced Chai & Honey',
       description: 'Aromatic chai spices layered with smooth, golden honey buttercream.',
       imagePath: 'assets/flavors/honey.jpg',
-      basePrice: 27.00,
+      basePrice: 550.00,
     ),
     CakeFlavor(
       name: 'Ultimate Chocolate',
       description: 'Decadent triple chocolate mousse with a rich dark chocolate ganache.',
       imagePath: 'assets/flavors/choco.jpg',
-      basePrice: 32.00,
+      basePrice: 600.00,
     ),
   ];
 
@@ -44,12 +44,12 @@ class Cake {
     CakeSize(
       name: "Medium",
       description: "8-inch",
-      addPrice: 15.0, 
+      addPrice: 300.00, 
     ),
     CakeSize(
       name: "Large",
       description: "10-inch",
-      addPrice: 30.0, 
+      addPrice: 500.00, 
     ),
   ];
 }

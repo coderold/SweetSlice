@@ -71,6 +71,7 @@ flutter:
     - assets/addons/topper.jpg
     - assets/addons/candle.jpg
     - assets/addons/card.jpg
+    - assets/addons/addon.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
