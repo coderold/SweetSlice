@@ -12,9 +12,18 @@ class StartScreen extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child: Container(
-              color: AppTheme.primary
+          Positioned(
+            top: 0,
+            bottom: 0,
+            left: 0,
+            width: Screensize.isWeb(context) 
+                ? Screensize.width(context) * 0.3 
+                : Screensize.width(context),
+            child: Image.asset(
+              'assets/cakeswp.jpg',
+              fit: BoxFit.cover,
+              color: AppTheme.primary.withValues(alpha: 0.7),
+              colorBlendMode: BlendMode.srcOver,
             ),
           ),
 
@@ -91,9 +100,7 @@ class StartScreen extends StatelessWidget {
               ),
             )
           ),
-
-          
-          
+   
         ]
       )
       
