@@ -8,8 +8,8 @@ class AddonCheckbox extends StatelessWidget {
   final String description;
   final String imagePath;
   final double price;
-  final bool isSelected;               // Added: tracks the check state
-  final ValueChanged<bool?> onChanged; // Added: the callback function
+  final bool isSelected;
+  final ValueChanged<bool?> onChanged;
 
   const AddonCheckbox({
     super.key,
@@ -17,8 +17,8 @@ class AddonCheckbox extends StatelessWidget {
     required this.description,
     required this.imagePath,
     required this.price,
-    required this.isSelected,          // Required in constructor
-    required this.onChanged,           // Required in constructor
+    required this.isSelected,
+    required this.onChanged,
   });
 
   @override

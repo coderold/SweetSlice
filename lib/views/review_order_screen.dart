@@ -24,7 +24,7 @@ class ReviewOrderScreen extends StatelessWidget {
       body: Flex(
         direction: isWeb ? Axis.horizontal : Axis.vertical,
         children: [
-          /// 1. IMAGE SECTION
+
           Expanded(
             flex: isWeb ? 3 : 2,
             child: Container(
@@ -38,7 +38,6 @@ class ReviewOrderScreen extends StatelessWidget {
             ),
           ),
 
-          /// 2. DETAILS & BREAKDOWN SECTION
           Expanded(
             flex: isWeb ? 2 : 3,
             child: Container(
