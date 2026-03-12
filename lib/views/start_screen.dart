@@ -81,10 +81,10 @@ class StartScreen extends StatelessWidget {
                           backgroundColor: WidgetStatePropertyAll(AppTheme.primary)                  
                         ),
                         onPressed: (){
-                          Navigator.push(
+                          Navigator.pushAndRemoveUntil(
                             context, 
                             MaterialPageRoute(builder: (context) => FlavorScreen()),
-                            //(route) => false
+                            (route) => false
                           );
                         }, 
                         child: Text(

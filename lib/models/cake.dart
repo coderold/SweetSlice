@@ -1,4 +1,5 @@
 import 'package:advmobprog_midterms_tp03_molina/models/cake_flavor.dart';
+import 'package:advmobprog_midterms_tp03_molina/models/cake_size.dart';
 
 class Cake {
   static List<CakeFlavor> flavors = [
@@ -34,4 +35,21 @@ class Cake {
     ),
   ];
 
+  static List<CakeSize> sizes = [
+    CakeSize(
+      name: "Small",
+      description: "6-inch",
+      addPrice: 0.0,
+    ),
+    CakeSize(
+      name: "Medium",
+      description: "8-inch",
+      addPrice: 15.0, 
+    ),
+    CakeSize(
+      name: "Large",
+      description: "10-inch",
+      addPrice: 30.0, 
+    ),
+  ];
 }

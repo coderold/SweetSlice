@@ -2,7 +2,7 @@ import 'package:advmobprog_midterms_tp03_molina/core/responsive.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme.dart';
 import 'package:advmobprog_midterms_tp03_molina/core/theme_ext.dart';
 import 'package:advmobprog_midterms_tp03_molina/models/cake.dart';
-import 'package:advmobprog_midterms_tp03_molina/models/cake_flavor.dart';
+import 'package:advmobprog_midterms_tp03_molina/models/cake_size.dart';
 import 'package:advmobprog_midterms_tp03_molina/widgets/next_button.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +14,7 @@ class SizeScreen extends StatefulWidget {
 }
 
 class _SizeScreenState extends State<SizeScreen> {
-  CakeFlavor currentCake = Cake.flavors[0];
+  CakeSize currentSize = Cake.sizes[0];
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +22,9 @@ class _SizeScreenState extends State<SizeScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Select Flavor", style: context.textTheme.headlineMedium),
+        title: Text("Select Size", style: context.textTheme.headlineMedium),
         centerTitle: true,
+        elevation: 2,
       ),
       body: Flex(
         direction: isWeb ? Axis.horizontal : Axis.vertical,
@@ -61,17 +62,17 @@ class _SizeScreenState extends State<SizeScreen> {
                   Expanded(
                     child: ListView.builder(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
-                      itemCount: Cake.flavors.length,
+                      itemCount: Cake.sizes.length,
                       itemBuilder: (context, index) {
-                        final item = Cake.flavors[index];
-                        return RadioListTile<CakeFlavor>(
+                        final item = Cake.sizes[index];
+                        return RadioListTile<CakeSize>(
                           title: Text(item.name, style: const TextStyle(fontWeight: FontWeight.bold)),
                           subtitle: Text(item.description),
                           value: item,
-                          groupValue: currentCake,
+                          groupValue: currentSize,
                           activeColor: AppTheme.primary,
                           onChanged: (val) {
-                            setState(() => currentCake = val!);
+                            setState(() => currentSize = val!);
                           },
                         );
                       },
