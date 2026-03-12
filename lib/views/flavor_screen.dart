@@ -25,6 +25,7 @@ class _FlavorScreenState extends State<FlavorScreen> {
       appBar: AppBar(
         title: Text("Select Flavor", style: context.textTheme.headlineMedium),
         centerTitle: true,
+        backgroundColor: AppTheme.primary,
       ),
       body: Flex(
         direction: isWeb ? Axis.horizontal : Axis.vertical,
